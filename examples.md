@@ -1,6 +1,6 @@
 ---
-layout: modules
-title: Mobify.js Bellows Module Examples
+layout: base
+title: Mobify.js Magnifik Module Examples
 description:
     See examples of the Mobify.js expanding bellows module in action,
     including the sample code snippets.

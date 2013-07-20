@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+
+                     |    _)  _|      
+     __ `__ \   _ \  __ \  | |   |   |
+     |   |   | (   | |   | | __| |   |
+    _|  _|  _|\___/ _.__/ _|_|  \__, |
+                                ____/
+
+    www.mobify.com, coded in Vancouver, Canada. https://www.mobify.com/about/jobs/ -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Mobify">
+    <meta name="description" content="A responsive, mobile first accordion UI module from Mobify">
+    <meta name="keywords" content="mobify,mobile,modules,ui,responsive,bellows,accordion">
+    <title>Bellows</title>
+
+    <link rel="stylesheet" href="/magnifik/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/magnifik/static/css/syntax.css">
+    <link rel="stylesheet" href="/magnifik/static/css/font-awesome.css">
+    <link rel="stylesheet" href="/magnifik/static/js/highlight/styles/github.css">
+    <link rel="stylesheet" href="/magnifik/static/css/ui-dev.css?version=2">
+    <link rel="shortcut icon" href="/magnifik/static/img/favicon.ico">
+
+    <link rel="stylesheet" href="http://cdn.mobify.com/modules/bellows/0.3.0/bellows.min.css">
+    <link rel="stylesheet" href="http://cdn.mobify.com/modules/bellows/0.3.0/bellows-style.min.css">
+
+    <!-- Google Analytics TODO create GAID for modules
+
+    <script>
+        var _gaq = [
+            ['_setAccount', 'UA-993328-16'],
+            ['_trackPageview'],
+            ['_setDomainName', 'mobify.com'],
+            ['_setSiteSpeedSampleRate', 25],
+            ['_setAllowLinker', true]
+        ];
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    -->
+
+    <script>
+        /*! A fix for the iOS orientationchange zoom bug. Script by @scottjehl, rebound by @wilto.MIT / GPLv2 License.*/
+        (function(a){function m(){d.setAttribute("content",g),h=!0}function n(){d.setAttribute("content",f),h=!1}function o(b){l=b.accelerationIncludingGravity,i=Math.abs(l.x),j=Math.abs(l.y),k=Math.abs(l.z),(!a.orientation||a.orientation===180)&&(i>7||(k>6&&j<8||k<8&&j>6)&&i>5)?h&&n():h||m()}var b=navigator.userAgent;if(!(/iPhone|iPad|iPod/.test(navigator.platform)&&/OS [1-5]_[0-9_]* like Mac OS X/i.test(b)&&b.indexOf("AppleWebKit")>-1))return;var c=a.document;if(!c.querySelector)return;var d=c.querySelector("meta[name=viewport]"),e=d&&d.getAttribute("content"),f=e+",maximum-scale=1",g=e+",maximum-scale=10",h=!0,i,j,k,l;if(!d)return;a.addEventListener("orientationchange",m,!1),a.addEventListener("devicemotion",o,!1)})(this);
+    </script>
+
+    <!-- Typekit -->
+    <script src="//use.typekit.com/meb2ipm.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="">
+    <div class="viewport">
+        <div class="navbar row-fluid">
+            <div class="navbar-inner"> 
+                <a href="/magnifik/"><h1>Bellows</h1></a>
+
+
+            </div><!-- .navbar-inner -->
+        </div><!-- .navbar -->
+
+    <div class="row-fluid reversed-column">
+        <div class="span8">
+            <p><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></p>
+
+<script src="/magnifik//static/modules/magnifik/magnifik.js"></script>
+
+
+
+
+
+
+<h2>Basic Magnifik</h2>
+
+
+<p><a class="z1" href="http://www.fillmurray.com/g/400/600"><img src="http://www.fillmurray.com/g/400/600"></a></p>
+
+<script>$('a.z1').magnifik();</script>
+
+
+
+
+<h3>Code for this example:</h3>
+
+
+<pre><code>&lt;a class=&quot;z1&quot; href=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;/a&gt;
+&lt;script&gt;$('a.z1').magnifik();&lt;/script&gt;</code></pre>
+
+
+
+
+<h2>With a textual 'zoom in' link and closing only via Close button</h2>
+
+
+<p><a class="z2" href="http://www.fillmurray.com/g/400/600"><img src="http://www.fillmurray.com/g/400/600">Zoom in</a></p>
+
+<script>
+$('a.z2').magnifik({
+    clickCloses: false,
+    stageHTML: function() {
+        return Mobify.UI.Magnifik.defaults.stageHTML.call(this) + '<div class="m-close corner">Close</div>';
+    }
+});
+</script>
+
+
+
+
+<h3>Code for this example:</h3>
+
+
+<pre><code>&lt;a class=&quot;z2&quot; href=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;Zoom in&lt;/a&gt;
+&lt;script&gt;
+$('a.z2').magnifik({
+    clickCloses: false,
+    stageHTML: function() {
+        return Mobify.UI.Magnifik.defaults.stageHTML.call(this) + '&lt;div class=&quot;m-close corner&quot;&gt;Close&lt;/div&gt;';
+    }
+});
+&lt;/script&gt;</code></pre>
+
+
+
+
+<h2>Messaging upon opening</h2>
+
+
+<p><a class="z3" href="http://www.fillmurray.com/g/400/600"><img src="http://www.fillmurray.com/g/400/600"></a></p>
+
+<script>
+$('a.z3').magnifik({
+    stageHTML: function() {
+      return Mobify.UI.Magnifik.defaults.stageHTML.call(this)
+          + '<div class="magnifik-notice m-close">Tap anywhere to close. On touchscreen device, drag to navigate</div>';
+    }
+}).bind('afterOpen.magnifik', function() {
+  $('.magnifik-notice').addClass('magnifik-notice-fade');
+}).bind('beforeClose.magnifik', function() {
+  $('.magnifik-notice').removeClass('magnifik-notice-fade');
+});
+</script>
+
+
+
+
+<h3>Code for this example:</h3>
+
+
+<pre><code>&lt;a class=&quot;z3&quot; href=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;/a&gt;
+&lt;script&gt;
+$('a.z3').magnifik({
+    stageHTML: function() {
+      return Mobify.UI.Magnifik.defaults.stageHTML.call(this)
+          + '&lt;div class=&quot;magnifik-notice m-close&quot;&gt;Tap anywhere to close. On touchscreen device, drag to navigate&lt;/div&gt;';
+    }
+}).bind('afterOpen.magnifik', function() {
+  $('.magnifik-notice').addClass('magnifik-notice-fade');
+}).bind('beforeClose.magnifik', function() {
+  $('.magnifik-notice').removeClass('magnifik-notice-fade');
+});
+&lt;/script&gt;</code></pre>
+
+
+
+
+<h2>Limiting magnifik to a container</h2>
+
+
+<p><a class="z4" href="http://www.fillmurray.com/g/400/600"><img src="http://www.fillmurray.com/g/400/600"></a></p>
+
+<div class="z4-wrap"></div>
+
+
+<script>
+    $('a.z4').magnifik({stage: '.z4-wrap'});
+</script>
+
+
+
+
+<h3>Code for this example:</h3>
+
+
+<pre><code>&lt;a class=&quot;z4&quot; href=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;/a&gt;
+&lt;div class=&quot;z4-wrap&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    $('a.z4').magnifik({stage: '.z4-wrap'});
+&lt;/script&gt;</code></pre>
+
+
+        </div>
+
+        <div class="span4 sidebar-nav modules-nav shaded rounded">
+            <div class="nav-modules">
+    <ul>
+        <li>
+            <a href="/magnifik/">Bellows</a>
+            <ul>
+                <li><a href="/magnifik/#usage">Usage</a></li>
+                <li><a href="/magnifik/#methods">Methods</a></li>
+                <li><a href="/magnifik/#class-names">Class Names</a></li>
+                <li><a href="/magnifik/#event-hooks">Event Hooks</a></li>
+                <li><a href="/magnifik/#browser-support">Browser Support</a></li>
+                <li><a href="/magnifik/examples/">Examples</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="row-fluid">
+            <div class="span6">
+                <p>Copyright &copy; 2013 <a href="//www.mobify.com/">Mobify</a>.</p>
+            </div>
+
+            <div class="span6">
+                <ul class="nav pull-right">
+                    <li>
+                        <a href="//twitter.com/mobify" title="Mobify on Twitter">
+                            <i class="icon-twitter"></i>@mobify
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//github.com/mobify/bellows" title="Mobify on Github">
+                            <i class="icon-github"></i>Github
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- .row-fluid -->
+ </div><!-- .footer -->
+
+<!-- JavaScript -->
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="/magnifik/static/js/bootstrap-dropdown.js"></script>
+<script>
+    $(document).ready(function() {
+      $("div.animated div").addClass("active");
+    });
+</script>
+<script src="/magnifik/static/js/highlight/highlight.pack.js"></script>
+<script src="http://cdn.mobify.com/modules/bellows/0.3.0/bellows.min.js"></script>
+
+<script>
+    $(function() { $('.m-bellows').bellows(); });
+</script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

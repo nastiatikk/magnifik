@@ -1,6 +1,6 @@
 ---
-layout: modules
-title: Responsive, Mobile first zooming UI module
+layout: base
+title: Responsive, Mobile first accordion UI module
 description:
     Learn about the Magnifik module, an expanding bellows menu for
     two-level navigation systems.

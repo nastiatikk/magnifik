@@ -65,7 +65,15 @@
             </div><!-- .navbar-inner -->
         </div><!-- .navbar -->
 
-        {{ content }}
+    <div class="row-fluid reversed-column">
+        <div class="span8">
+            {{ content }}
+        </div>
+
+        <div class="span4 sidebar-nav modules-nav shaded rounded">
+            {% include nav.html %}
+        </div>
+    </div>
     </div>
     <div class="footer">
         <div class="row-fluid">
@@ -81,7 +89,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="//github.com/mobify/mobify-modules" title="Mobify on Github">
+                        <a href="//github.com/mobify/bellows" title="Mobify on Github">
                             <i class="icon-github"></i>Github
                         </a>
                     </li>

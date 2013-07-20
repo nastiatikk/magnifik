@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+
+                     |    _)  _|      
+     __ `__ \   _ \  __ \  | |   |   |
+     |   |   | (   | |   | | __| |   |
+    _|  _|  _|\___/ _.__/ _|_|  \__, |
+                                ____/
+
+    www.mobify.com, coded in Vancouver, Canada. https://www.mobify.com/about/jobs/ -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Mobify">
+    <meta name="description" content="A responsive, mobile first accordion UI module from Mobify">
+    <meta name="keywords" content="mobify,mobile,modules,ui,responsive,bellows,accordion">
+    <title>Bellows</title>
+
+    <link rel="stylesheet" href="/magnifik/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/magnifik/static/css/syntax.css">
+    <link rel="stylesheet" href="/magnifik/static/css/font-awesome.css">
+    <link rel="stylesheet" href="/magnifik/static/js/highlight/styles/github.css">
+    <link rel="stylesheet" href="/magnifik/static/css/ui-dev.css?version=2">
+    <link rel="shortcut icon" href="/magnifik/static/img/favicon.ico">
+
+    <link rel="stylesheet" href="http://cdn.mobify.com/modules/bellows/0.3.0/bellows.min.css">
+    <link rel="stylesheet" href="http://cdn.mobify.com/modules/bellows/0.3.0/bellows-style.min.css">
+
+    <!-- Google Analytics TODO create GAID for modules
+
+    <script>
+        var _gaq = [
+            ['_setAccount', 'UA-993328-16'],
+            ['_trackPageview'],
+            ['_setDomainName', 'mobify.com'],
+            ['_setSiteSpeedSampleRate', 25],
+            ['_setAllowLinker', true]
+        ];
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    -->
+
+    <script>
+        /*! A fix for the iOS orientationchange zoom bug. Script by @scottjehl, rebound by @wilto.MIT / GPLv2 License.*/
+        (function(a){function m(){d.setAttribute("content",g),h=!0}function n(){d.setAttribute("content",f),h=!1}function o(b){l=b.accelerationIncludingGravity,i=Math.abs(l.x),j=Math.abs(l.y),k=Math.abs(l.z),(!a.orientation||a.orientation===180)&&(i>7||(k>6&&j<8||k<8&&j>6)&&i>5)?h&&n():h||m()}var b=navigator.userAgent;if(!(/iPhone|iPad|iPod/.test(navigator.platform)&&/OS [1-5]_[0-9_]* like Mac OS X/i.test(b)&&b.indexOf("AppleWebKit")>-1))return;var c=a.document;if(!c.querySelector)return;var d=c.querySelector("meta[name=viewport]"),e=d&&d.getAttribute("content"),f=e+",maximum-scale=1",g=e+",maximum-scale=10",h=!0,i,j,k,l;if(!d)return;a.addEventListener("orientationchange",m,!1),a.addEventListener("devicemotion",o,!1)})(this);
+    </script>
+
+    <!-- Typekit -->
+    <script src="//use.typekit.com/meb2ipm.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="">
+    <div class="viewport">
+        <div class="navbar row-fluid">
+            <div class="navbar-inner"> 
+                <a href="/magnifik/"><h1>Bellows</h1></a>
+
+
+            </div><!-- .navbar-inner -->
+        </div><!-- .navbar -->
+
+    <div class="row-fluid reversed-column">
+        <div class="span8">
+            <h1>Magnifik</h1>
+
+<p>A module for showing and panning through large images in a
+touchscreen-friendly way.</p>
+
+<p class="exit-notice-zoomable">
+    <a href="/magnifik//static/img/modules/zoom_big.jpg">
+    <img src="/magnifik//static/img/modules/zoom_thumb.jpg" style="width: 100%"></a>
+</p>
+
+
+<script src="/magnifik//static/modules/zoomable/zoomable.js"></script>
+
+
+<script>
+    var $zoomable = $('.exit-notice-zoomable a');
+    $zoomable.zoomable({
+        stageHTML: function() {
+            return Mobify.UI.Magnifik defaults.stageHTML.call(this)
+                 + '<div class="zoomable-notice m-close">Tap anywhere to close. On touchscreen device, drag to navigate</div>';
+        }
+    });
+
+    $zoomable.bind('afterOpen.zoomable', function() {
+        $('.zoomable-notice').addClass('zoomable-notice-fade');
+    });
+
+    $zoomable.bind('beforeClose.zoomable', function() {
+        $('.zoomable-notice').removeClass('zoomable-notice-fade');
+    });
+</script>
+
+
+
+
+<div class="btn-container">
+    <a href="/magnifik//static/downloads/zoomable.zip" class="btn btn-primary">Download Magnifik /a>
+    <a href="/magnifik//modules/zoomable-examples/" class="see-examples">See more examples</a>
+</div>
+
+
+<h2>Usage</h2>
+
+<pre><code>&lt;!-- the zoomable --&gt;
+&lt;a class="zoomable" href="big.jpg"&gt;
+    &lt;!-- the thumbnail --&gt;
+    &lt;img src="thumbnail.jpg"&gt;
+&lt;/a&gt;
+
+&lt;!-- include zepto.js or jquery.js --&gt;
+&lt;script src="zepto.js"&gt;&lt;/script&gt;
+&lt;!-- include zoomable.js --&gt;
+&lt;script src="zoomable.js"&gt;&lt;/script&gt;
+&lt;!-- construct the zoomable --&gt;
+&lt;script&gt;$('a.m-zoomable').zoomable()&lt;/script&gt;
+</code></pre>
+
+<p>The element passed to <code>.zoomable()</code> should reference a high resolution
+image.</p>
+
+<p>When the thumbnail is clicked, the high resolution image will be shown.
+Clicking on image again will dimiss it.</p>
+
+<h2>Methods</h2>
+
+<h3>.zoomable(options)</h3>
+
+<p>Initializes the zoomable with the options (an <code>object</code>) given.</p>
+
+<pre><code>$('.zoomable').zoomable({
+    classPrefix: "m-"
+});
+</code></pre>
+
+<h3>.zoomable('open')</h3>
+
+<p>Opens zoomable.</p>
+
+<pre><code>$('.zoomable').zoomable('open');
+</code></pre>
+
+<h3>.zoomable('close')</h3>
+
+<p>Closes zoomable.</p>
+
+<pre><code>$('.zoomable').zoomable('close');
+</code></pre>
+
+<h3>.zoomable('unbind')</h3>
+
+<p>Removes event handlers from the zoomable context.</p>
+
+<pre><code>$('.zoomable').zoomable('unbind');
+</code></pre>
+
+<h3>.zoomable('bind')</h3>
+
+<p>Restores event handlers for the zoomable context.</p>
+
+<pre><code>$('.zoomable').zoomable('bind');
+</code></pre>
+
+<h3>.zoomable('destroy')</h3>
+
+<p>Unbinds the events from the zoomable context, and removes it from the DOM.</p>
+
+<pre><code>$('.zoomable').zoomable('destroy');
+</code></pre>
+
+<h2>Configuration</h2>
+
+<p>Below are the options available in the configuration object:</p>
+
+<table>
+<thead>
+<tr>
+<th> Name          </th>
+<th> Default        </th>
+<th> Description                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> classPrefix   </td>
+<td> <code>"m-"</code>         </td>
+<td>This prefix is inserted before all class references for conflict avoidance. For example, default close class will be <code>m-close</code>. </td>
+</tr>
+<tr>
+<td> stage         </td>
+<td> <body> element </td>
+<td> DOM node that will receive generated zoomable markup. </td>
+</tr>
+<tr>
+<td> classNames    </td>
+<td> Object, see below </td>
+<td> Contains class names for various parts of zoomable. Classes can be overriden individually. </td>
+</tr>
+<tr>
+<td> ratio         </td>
+<td> <code>2</code>            </td>
+<td> Zoomed in image is magified to be <code>ratio</code> times bigger than the stage. </td>
+</tr>
+<tr>
+<td> seekImage     </td>
+<td> <code>true</code>         </td>
+<td> If thumbnail image is not found in the anchor element used as context, Magnifik will go up in DOM tree until it finds nearby image. Set to <code>false</code> to restrict image lookups to stay within context</td>
+</tr>
+<tr>
+<td> clickCloses   </td>
+<td> <code>true</code>         </td>
+<td> Specifies if clicking or tapping in place on the magnified image should close magnified view </td>
+</tr>
+<tr>
+<td> activationEvent </td>
+<td> <code>"click"</code> </td>
+<td> Override to use alternate event for all zoomable control interactions </td>
+</tr>
+<tr>
+<td> canvasStyle  </td>
+<td> Object, see below </td>
+<td> Extra CSS properties to be applied to canvas. You can delete default properties by setting their value to <code>undefined</code>. </td>
+</tr>
+<tr>
+<td> imageStyle   </td>
+<td> Object, see below </td>
+<td> Extra CSS properties to be applied to low-res and high-res magnified image. You can delete default properties by setting their value to <code>undefined</code>. </td>
+</tr>
+<tr>
+<td> stageHTML </td>
+<td> Function </td>
+<td> Generates HTML of magnified state of zoomable module. See examples to see how to change it </td>
+</tr>
+<tr>
+<td> globalStyle </td>
+<td> Function </td>
+<td> Generates CSS for zoomable acting upon <body>. Typically should be left as-is.</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Classes</h2>
+
+<table>
+<thead>
+<tr>
+<th> Name        </th>
+<th> Class       </th>
+<th> Description                                                                                       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> zooming</td>
+<td> m-<code>zooming</code> </td>
+<td> Applied to stage (usually body element) when zoomable is active </td>
+</tr>
+<tr>
+<td> close</td>
+<td> m-<code>close</code> </td>
+<td> Should be added to custom close buttons within zoomable markup </td>
+</tr>
+<tr>
+<td> control</td>
+<td> m-<code>zoomableControl</code> </td>
+<td> Internal, added to all top-level elements injected by zoomable </td>
+</tr>
+<tr>
+<td> canvas</td>
+<td> m-<code>zoomableCanvas</code> </td>
+<td> Applied to div wrapper that contains both low and high resolution images </td>
+</tr>
+<tr>
+<td> thumb</td>
+<td> m-<code>zoomableThumb</code> </td>
+<td> Applied to low resolution (thumbnail) image </td>
+</tr>
+<tr>
+<td> full</td>
+<td> m-<code>zoomableFull</code> </td>
+<td> Applied to high resolution image </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Default styles</h2>
+
+<p>These are the default styles applied to magnified image(s) and their container.</p>
+
+<h3>canvasStyle</h3>
+
+<pre><code>{ 
+    position: 'absolute'
+  , width: '100%'
+  , height: '100%'
+  , overflow: 'auto'
+}
+</code></pre>
+
+<h3>imageStyle</h3>
+
+<pre><code>{ 
+    position: 'absolute'
+  , top: '0'
+  , left: '0'
+  , maxWidth: 'none'
+  , maxHeight: 'none'        
+}
+</code></pre>
+
+<h2>Events</h2>
+
+<p>The zoomable emits the following events:</p>
+
+<table>
+<thead>
+<tr>
+<th> Name          </th>
+<th> Description                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> beforeOpen    </td>
+<td> Fired before zoomable starts opening      </td>
+</tr>
+<tr>
+<td> afterOpen     </td>
+<td> Fired when zoomable is fully open         </td>
+</tr>
+<tr>
+<td> beforeClose   </td>
+<td> Fired before zoomable starts closing      </td>
+</tr>
+<tr>
+<td> afterClose    </td>
+<td> Fired after zoomable finishes closing     </td>
+</tr>
+</tbody>
+</table>
+
+
+<!--
+
+## Limitations
+
+Magnifik relies on click event for activation and deactivation. This results 
+in about ~300ms delay in iOS, as Mobile Safari waits to ensure that event 
+in question is a single tap rather than built-in page zooming double tap. 
+We do not bundle a quick tap implementation with zoomable, but you can 
+attach a tap event manually. Here is an example of custom binding that 
+uses [jQuery tappable](https://github.com/aanand/jquery.tappable.js/blob/master/jquery.tappable.js):
+
+    var el = $('a.zoomable').zoomable();
+    el.tappable(function() {
+        $(this).zoomable('show');
+    });
+    
+Other quick touch implementations can be used in similar ways.
+
+-->
+
+
+        </div>
+
+        <div class="span4 sidebar-nav modules-nav shaded rounded">
+            <div class="nav-modules">
+    <ul>
+        <li>
+            <a href="/magnifik/">Bellows</a>
+            <ul>
+                <li><a href="/magnifik/#usage">Usage</a></li>
+                <li><a href="/magnifik/#methods">Methods</a></li>
+                <li><a href="/magnifik/#class-names">Class Names</a></li>
+                <li><a href="/magnifik/#event-hooks">Event Hooks</a></li>
+                <li><a href="/magnifik/#browser-support">Browser Support</a></li>
+                <li><a href="/magnifik/examples/">Examples</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="row-fluid">
+            <div class="span6">
+                <p>Copyright &copy; 2013 <a href="//www.mobify.com/">Mobify</a>.</p>
+            </div>
+
+            <div class="span6">
+                <ul class="nav pull-right">
+                    <li>
+                        <a href="//twitter.com/mobify" title="Mobify on Twitter">
+                            <i class="icon-twitter"></i>@mobify
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//github.com/mobify/bellows" title="Mobify on Github">
+                            <i class="icon-github"></i>Github
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- .row-fluid -->
+ </div><!-- .footer -->
+
+<!-- JavaScript -->
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="/magnifik/static/js/bootstrap-dropdown.js"></script>
+<script>
+    $(document).ready(function() {
+      $("div.animated div").addClass("active");
+    });
+</script>
+<script src="/magnifik/static/js/highlight/highlight.pack.js"></script>
+<script src="http://cdn.mobify.com/modules/bellows/0.3.0/bellows.min.js"></script>
+
+<script>
+    $(function() { $('.m-bellows').bellows(); });
+</script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
