@@ -7,7 +7,7 @@ description:
 ---
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<script src="{{ site.baseurl }}/static/modules/magnifik/magnifik.js"></script>
+<script src="http://cdn.mobify.com/modules/magnifik/0.1.0/magnifik.min.js"></script>
 <style>
 .corner.m-close { color: white; background: black; position: absolute; right: 0; top: 0;
     font-weight: bold; font-size: 18px; padding: 10px;

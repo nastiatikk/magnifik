@@ -11,10 +11,10 @@ A module for showing and panning through large images in a
 touchscreen-friendly way.
 
 <p class="exit-notice-zoomable">
-    <a href="{{ site.baseurl }}/static/img/modules/zoom_big.jpg">
-    <img src="{{ site.baseurl }}/static/img/modules/zoom_thumb.jpg" style="width: 100%"></a>
+    <a href="http://www.fillmurray.com/g/401/601">
+    <img src="http://www.fillmurray.com/g/401/601" style="width: 100%"></a>
 </p>
-<script src="{{ site.baseurl }}/static/modules/zoomable/zoomable.js"></script>
+<script src="http://cdn.mobify.com/modules/magnifik/0.1.0/magnifik.min.js"></script>
 <script>
     var $zoomable = $('.exit-notice-zoomable a');
     $zoomable.zoomable({
@@ -34,8 +34,8 @@ touchscreen-friendly way.
 </script>
 
 <div class="btn-container">
-    <a href="{{ site.baseurl }}/static/downloads/zoomable.zip" class="btn btn-primary">Download Magnifik /a>
-    <a href="{{ site.baseurl }}/modules/zoomable-examples/" class="see-examples">See more examples</a>
+    <a href="http://cdn.mobify.com/modules/magnifik/0.1.0/magnifik.zip" class="btn btn-primary">Download Magnifik /a>
+    <a href="{{ site.baseurl }}/magnifik/examples/" class="see-examples">See more examples</a>
 </div>
 
 
