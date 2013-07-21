@@ -2,7 +2,7 @@
 layout: base
 title: Mobify.js Magnifik Module Examples
 description:
-    See examples of the Mobify.js expanding bellows module in action,
+    See examples of the Mobify.js zooming image module Magnifik in action,
     including the sample code snippets.
 ---
 

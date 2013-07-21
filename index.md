@@ -12,19 +12,15 @@ touchscreen-friendly way.
 
 <p class="exit-notice-magnifik">
     <a href="//www.fillmurray.com/g/401/601">
-    <img src="//www.fillmurray.com/g/401/601" style="width: 100%"></a>
+        <img src="//www.fillmurray.com/g/401/601" style="width: 100%">
+    </a>
 </p>
 <script src="//code.jquery.com/jquery-1.10.1.js"></script>
 <script src="//cdn.mobify.com/modules/magnifik/0.1.0/magnifik.min.js"></script>
 
 <script>
     var $magnifik = $('.exit-notice-magnifik a');
-    $magnifik.magnifik({
-        stageHTML: function() {
-            return Mobify.UI.Magnifik defaults.stageHTML.call(this)
-                 + '<div class="magnifik-notice m-close">Tap anywhere to close. On touchscreen device, drag to navigate</div>';
-        }
-    });
+    $magnifik.magnifik();
 
     $magnifik.bind('afterOpen.magnifik', function() {
         $('.magnifik-notice').addClass('magnifik-notice-fade');
