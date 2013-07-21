@@ -34,7 +34,7 @@ touchscreen-friendly way.
 </script>
 
 <div class="btn-container">
-    <a href="http://cdn.mobify.com/modules/magnifik/0.1.0/magnifik.zip" class="btn btn-primary">Download Magnifik /a>
+    <a href="http://cdn.mobify.com/modules/magnifik/0.1.0/magnifik.zip" class="btn btn-primary">Download Magnifik</a>
     <a href="{{ site.baseurl }}/examples/" class="see-examples">See more examples</a>
 </div>
 
