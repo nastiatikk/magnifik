@@ -14,7 +14,7 @@ touchscreen-friendly way.
     <a href="http://www.fillmurray.com/g/401/601">
     <img src="http://www.fillmurray.com/g/401/601" style="width: 100%"></a>
 </p>
-<script src="http://cdn.mobify.com/modules/magnifik/0.1.0/magnifik.min.js"></script>
+<script src="http://cdn.mobify.com/modules/magnifik/0.1.1/magnifik.min.js"></script>
 <script>
     var $magnifik = $('.exit-notice-magnifik a');
     $magnifik.magnifik({
@@ -34,7 +34,7 @@ touchscreen-friendly way.
 </script>
 
 <div class="btn-container">
-    <a href="http://cdn.mobify.com/modules/magnifik/0.1.0/magnifik.zip" class="btn btn-primary">Download Magnifik</a>
+    <a href="http://cdn.mobify.com/modules/magnifik/0.1.1/magnifik.zip" class="btn btn-primary">Download Magnifik</a>
     <a href="{{ site.baseurl }}/examples/" class="see-examples">See more examples</a>
 </div>
 
