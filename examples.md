@@ -7,7 +7,10 @@ description:
 ---
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<script src="http://cdn.mobify.com/modules/magnifik/0.1.0/magnifik.min.js"></script>
+<script src="//code.jquery.com/jquery-1.10.1.js"></script>
+<script src="//cdn.mobify.com/modules/magnifik/0.1.0/magnifik.min.js"></script>
+
+
 <style>
 .corner.m-close { color: white; background: black; position: absolute; right: 0; top: 0;
     font-weight: bold; font-size: 18px; padding: 10px;
@@ -33,15 +36,15 @@ a img { width: 100%; }
 
 
 <h2>Basic Magnifik</h2>
-<a class="z1" href="http://www.fillmurray.com/g/400/600"><img src="http://www.fillmurray.com/g/400/600"></a>
+<a class="z1" href="//www.fillmurray.com/g/400/600"><img src="//www.fillmurray.com/g/400/600"></a>
 <script>$('a.z1').magnifik();</script>
 
 <h3>Code for this example:</h3>
-<pre><code>&lt;a class=&quot;z1&quot; href=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;/a&gt;
+<pre><code>&lt;a class=&quot;z1&quot; href=&quot;//www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;//www.fillmurray.com/g/400/600&quot;&gt;&lt;/a&gt;
 &lt;script&gt;$('a.z1').magnifik();&lt;/script&gt;</code></pre>
 
 <h2>With a textual 'zoom in' link and closing only via Close button</h2>
-<a class="z2" href="http://www.fillmurray.com/g/400/600"><img src="http://www.fillmurray.com/g/400/600">Zoom in</a>
+<a class="z2" href="//www.fillmurray.com/g/400/600"><img src="//www.fillmurray.com/g/400/600">Zoom in</a>
 <script>
 $('a.z2').magnifik({
     clickCloses: false,
@@ -52,7 +55,7 @@ $('a.z2').magnifik({
 </script>
 
 <h3>Code for this example:</h3>
-<pre><code>&lt;a class=&quot;z2&quot; href=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;Zoom in&lt;/a&gt;
+<pre><code>&lt;a class=&quot;z2&quot; href=&quot;//www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;//www.fillmurray.com/g/400/600&quot;&gt;Zoom in&lt;/a&gt;
 &lt;script&gt;
 $('a.z2').magnifik({
     clickCloses: false,
@@ -63,7 +66,7 @@ $('a.z2').magnifik({
 &lt;/script&gt;</code></pre>
 
 <h2>Messaging upon opening</h2>
-<a class="z3" href="http://www.fillmurray.com/g/400/600"><img src="http://www.fillmurray.com/g/400/600"></a>
+<a class="z3" href="//www.fillmurray.com/g/400/600"><img src="//www.fillmurray.com/g/400/600"></a>
 <script>
 $('a.z3').magnifik({
     stageHTML: function() {
@@ -78,7 +81,7 @@ $('a.z3').magnifik({
 </script>
 
 <h3>Code for this example:</h3>
-<pre><code>&lt;a class=&quot;z3&quot; href=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;/a&gt;
+<pre><code>&lt;a class=&quot;z3&quot; href=&quot;//www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;//www.fillmurray.com/g/400/600&quot;&gt;&lt;/a&gt;
 &lt;script&gt;
 $('a.z3').magnifik({
     stageHTML: function() {
@@ -93,14 +96,14 @@ $('a.z3').magnifik({
 &lt;/script&gt;</code></pre>
 
 <h2>Limiting magnifik to a container</h2>
-<a class="z4" href="http://www.fillmurray.com/g/400/600"><img src="http://www.fillmurray.com/g/400/600"></a>
+<a class="z4" href="//www.fillmurray.com/g/400/600"><img src="//www.fillmurray.com/g/400/600"></a>
 <div class="z4-wrap"></div>
 <script>
     $('a.z4').magnifik({stage: '.z4-wrap'});
 </script>
 
 <h3>Code for this example:</h3>
-<pre><code>&lt;a class=&quot;z4&quot; href=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;http://www.fillmurray.com/g/400/600&quot;&gt;&lt;/a&gt;
+<pre><code>&lt;a class=&quot;z4&quot; href=&quot;//www.fillmurray.com/g/400/600&quot;&gt;&lt;img src=&quot;//www.fillmurray.com/g/400/600&quot;&gt;&lt;/a&gt;
 &lt;div class=&quot;z4-wrap&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
     $('a.z4').magnifik({stage: '.z4-wrap'});

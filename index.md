@@ -11,10 +11,12 @@ A module for showing and panning through large images in a
 touchscreen-friendly way.
 
 <p class="exit-notice-magnifik">
-    <a href="http://www.fillmurray.com/g/401/601">
-    <img src="http://www.fillmurray.com/g/401/601" style="width: 100%"></a>
+    <a href="//www.fillmurray.com/g/401/601">
+    <img src="//www.fillmurray.com/g/401/601" style="width: 100%"></a>
 </p>
-<script src="http://cdn.mobify.com/modules/magnifik/0.1.1/magnifik.min.js"></script>
+<script src="//code.jquery.com/jquery-1.10.1.js"></script>
+<script src="//cdn.mobify.com/modules/magnifik/0.1.0/magnifik.min.js"></script>
+
 <script>
     var $magnifik = $('.exit-notice-magnifik a');
     $magnifik.magnifik({
@@ -34,7 +36,7 @@ touchscreen-friendly way.
 </script>
 
 <div class="btn-container">
-    <a href="http://cdn.mobify.com/modules/magnifik/0.1.1/magnifik.zip" class="btn btn-primary">Download Magnifik</a>
+    <a href="//cdn.mobify.com/modules/magnifik/0.1.1/magnifik.zip" class="btn btn-primary">Download Magnifik</a>
     <a href="{{ site.baseurl }}examples/" class="see-examples">See more examples</a>
 </div>
 
