@@ -10,26 +10,26 @@ description:
 A module for showing and panning through large images in a 
 touchscreen-friendly way.
 
-<p class="exit-notice-zoomable">
+<p class="exit-notice-magnifik">
     <a href="http://www.fillmurray.com/g/401/601">
     <img src="http://www.fillmurray.com/g/401/601" style="width: 100%"></a>
 </p>
 <script src="http://cdn.mobify.com/modules/magnifik/0.1.0/magnifik.min.js"></script>
 <script>
-    var $zoomable = $('.exit-notice-zoomable a');
-    $zoomable.zoomable({
+    var $magnifik = $('.exit-notice-magnifik a');
+    $magnifik.magnifik({
         stageHTML: function() {
             return Mobify.UI.Magnifik defaults.stageHTML.call(this)
-                 + '<div class="zoomable-notice m-close">Tap anywhere to close. On touchscreen device, drag to navigate</div>';
+                 + '<div class="magnifik-notice m-close">Tap anywhere to close. On touchscreen device, drag to navigate</div>';
         }
     });
 
-    $zoomable.bind('afterOpen.zoomable', function() {
-        $('.zoomable-notice').addClass('zoomable-notice-fade');
+    $magnifik.bind('afterOpen.magnifik', function() {
+        $('.magnifik-notice').addClass('magnifik-notice-fade');
     });
 
-    $zoomable.bind('beforeClose.zoomable', function() {
-        $('.zoomable-notice').removeClass('zoomable-notice-fade');
+    $magnifik.bind('beforeClose.magnifik', function() {
+        $('.magnifik-notice').removeClass('magnifik-notice-fade');
     });
 </script>
 
@@ -41,20 +41,20 @@ touchscreen-friendly way.
 
 ## Usage
 
-    <!-- the zoomable -->
-    <a class="zoomable" href="big.jpg">
+    <!-- the magnifik -->
+    <a class="magnifik" href="big.jpg">
         <!-- the thumbnail -->
         <img src="thumbnail.jpg">
     </a>
 
     <!-- include zepto.js or jquery.js -->
     <script src="zepto.js"></script>
-    <!-- include zoomable.js -->
-    <script src="zoomable.js"></script>
-    <!-- construct the zoomable -->
-    <script>$('a.m-zoomable').zoomable()</script>
+    <!-- include magnifik.js -->
+    <script src="magnifik.js"></script>
+    <!-- construct the magnifik -->
+    <script>$('a.m-magnifik').magnifik()</script>
 
-The element passed to `.zoomable()` should reference a high resolution
+The element passed to `.magnifik()` should reference a high resolution
 image.
 
 When the thumbnail is clicked, the high resolution image will be shown.
@@ -62,43 +62,43 @@ Clicking on image again will dimiss it.
 
 ## Methods
 
-### .zoomable(options)
+### .magnifik(options)
 
-Initializes the zoomable with the options (an `object`) given.
+Initializes the magnifik with the options (an `object`) given.
 
-    $('.zoomable').zoomable({
+    $('.magnifik').magnifik({
         classPrefix: "m-"
     });
 
-### .zoomable('open')
+### .magnifik('open')
 
-Opens zoomable.
+Opens magnifik.
 
-    $('.zoomable').zoomable('open');
+    $('.magnifik').magnifik('open');
 
-### .zoomable('close')
+### .magnifik('close')
 
-Closes zoomable.
+Closes magnifik.
 
-    $('.zoomable').zoomable('close');
+    $('.magnifik').magnifik('close');
 
-### .zoomable('unbind')
+### .magnifik('unbind')
 
-Removes event handlers from the zoomable context.
+Removes event handlers from the magnifik context.
 
-    $('.zoomable').zoomable('unbind');
+    $('.magnifik').magnifik('unbind');
 
-### .zoomable('bind')
+### .magnifik('bind')
 
-Restores event handlers for the zoomable context.
+Restores event handlers for the magnifik context.
 
-    $('.zoomable').zoomable('bind');
+    $('.magnifik').magnifik('bind');
 
-### .zoomable('destroy')
+### .magnifik('destroy')
 
-Unbinds the events from the zoomable context, and removes it from the DOM.
+Unbinds the events from the magnifik context, and removes it from the DOM.
 
-    $('.zoomable').zoomable('destroy');
+    $('.magnifik').magnifik('destroy');
 
 
 ## Configuration
@@ -108,27 +108,27 @@ Below are the options available in the configuration object:
 | Name          | Default        | Description                               |   
 |---------------|------------------------------------------------------------|
 | classPrefix   | `"m-"`         |This prefix is inserted before all class references for conflict avoidance. For example, default close class will be `m-close`. |
-| stage         | <body> element | DOM node that will receive generated zoomable markup. |
-| classNames    | Object, see below | Contains class names for various parts of zoomable. Classes can be overriden individually. |
+| stage         | <body> element | DOM node that will receive generated magnifik markup. |
+| classNames    | Object, see below | Contains class names for various parts of magnifik. Classes can be overriden individually. |
 | ratio         | `2`            | Zoomed in image is magified to be `ratio` times bigger than the stage. |
 | seekImage     | `true`         | If thumbnail image is not found in the anchor element used as context, Magnifik will go up in DOM tree until it finds nearby image. Set to `false` to restrict image lookups to stay within context 
 | clickCloses   | `true`         | Specifies if clicking or tapping in place on the magnified image should close magnified view |
-| activationEvent | `"click"` | Override to use alternate event for all zoomable control interactions |
+| activationEvent | `"click"` | Override to use alternate event for all magnifik control interactions |
 | canvasStyle  | Object, see below | Extra CSS properties to be applied to canvas. You can delete default properties by setting their value to `undefined`. | 
 | imageStyle   | Object, see below | Extra CSS properties to be applied to low-res and high-res magnified image. You can delete default properties by setting their value to `undefined`. |
-| stageHTML | Function | Generates HTML of magnified state of zoomable module. See examples to see how to change it |
-| globalStyle | Function | Generates CSS for zoomable acting upon <body>. Typically should be left as-is.
+| stageHTML | Function | Generates HTML of magnified state of magnifik module. See examples to see how to change it |
+| globalStyle | Function | Generates CSS for magnifik acting upon <body>. Typically should be left as-is.
 
 ## Classes
 
 | Name        | Class       | Description                                                                                       |           
 |-------------|---------------------------------------------------------------------------------------------------|
-| zooming| m-`zooming` | Applied to stage (usually body element) when zoomable is active |
-| close| m-`close` | Should be added to custom close buttons within zoomable markup |
-| control| m-`zoomableControl` | Internal, added to all top-level elements injected by zoomable |
-| canvas| m-`zoomableCanvas` | Applied to div wrapper that contains both low and high resolution images |
-| thumb| m-`zoomableThumb` | Applied to low resolution (thumbnail) image |
-| full| m-`zoomableFull` | Applied to high resolution image |
+| zooming| m-`zooming` | Applied to stage (usually body element) when magnifik is active |
+| close| m-`close` | Should be added to custom close buttons within magnifik markup |
+| control| m-`magnifikControl` | Internal, added to all top-level elements injected by magnifik |
+| canvas| m-`magnifikCanvas` | Applied to div wrapper that contains both low and high resolution images |
+| thumb| m-`magnifikThumb` | Applied to low resolution (thumbnail) image |
+| full| m-`magnifikFull` | Applied to high resolution image |
 
 ## Default styles
 
@@ -153,14 +153,14 @@ These are the default styles applied to magnified image(s) and their container.
 
 ## Events
 
-The zoomable emits the following events:
+The magnifik emits the following events:
 
 | Name          | Description                               |   
 |---------------|-------------------------------------------|
-| beforeOpen    | Fired before zoomable starts opening      |
-| afterOpen     | Fired when zoomable is fully open         |
-| beforeClose   | Fired before zoomable starts closing      |
-| afterClose    | Fired after zoomable finishes closing     |
+| beforeOpen    | Fired before magnifik starts opening      |
+| afterOpen     | Fired when magnifik is fully open         |
+| beforeClose   | Fired before magnifik starts closing      |
+| afterClose    | Fired after magnifik finishes closing     |
 
 <!--
 
@@ -169,13 +169,13 @@ The zoomable emits the following events:
 Magnifik relies on click event for activation and deactivation. This results 
 in about ~300ms delay in iOS, as Mobile Safari waits to ensure that event 
 in question is a single tap rather than built-in page zooming double tap. 
-We do not bundle a quick tap implementation with zoomable, but you can 
+We do not bundle a quick tap implementation with magnifik, but you can 
 attach a tap event manually. Here is an example of custom binding that 
 uses [jQuery tappable](https://github.com/aanand/jquery.tappable.js/blob/master/jquery.tappable.js):
 
-    var el = $('a.zoomable').zoomable();
+    var el = $('a.magnifik').magnifik();
     el.tappable(function() {
-        $(this).zoomable('show');
+        $(this).magnifik('show');
     });
 	
 Other quick touch implementations can be used in similar ways.
