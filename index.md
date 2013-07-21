@@ -37,7 +37,7 @@ touchscreen-friendly way.
 </div>
 
 
-## Usage
+## Usage<a id="usage"></a>
 
     <!-- the magnifik -->
     <a class="magnifik" href="big.jpg">
@@ -58,7 +58,7 @@ image.
 When the thumbnail is clicked, the high resolution image will be shown.
 Clicking on image again will dimiss it.
 
-## Methods
+## Methods<a id="methods"></a>
 
 ### .magnifik(options)
 
@@ -99,7 +99,7 @@ Unbinds the events from the magnifik context, and removes it from the DOM.
     $('.magnifik').magnifik('destroy');
 
 
-## Configuration
+## Configuration<a id="configuration"></a>
 
 Below are the options available in the configuration object:
 
@@ -117,7 +117,7 @@ Below are the options available in the configuration object:
 | stageHTML | Function | Generates HTML of magnified state of magnifik module. See examples to see how to change it |
 | globalStyle | Function | Generates CSS for magnifik acting upon <body>. Typically should be left as-is.
 
-## Classes
+## Classes<a id="classes"></a>
 
 | Name        | Class       | Description                                                                                       |           
 |-------------|---------------------------------------------------------------------------------------------------|
@@ -128,7 +128,7 @@ Below are the options available in the configuration object:
 | thumb| m-`magnifikThumb` | Applied to low resolution (thumbnail) image |
 | full| m-`magnifikFull` | Applied to high resolution image |
 
-## Default styles
+## Default styles<a id="default-styles"></a>
 
 These are the default styles applied to magnified image(s) and their container.
 
@@ -149,7 +149,7 @@ These are the default styles applied to magnified image(s) and their container.
       , maxHeight: 'none'        
     }
 
-## Events
+## Events<a id="events"></a>
 
 The magnifik emits the following events:
 
